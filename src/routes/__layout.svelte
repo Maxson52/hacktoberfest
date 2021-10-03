@@ -42,7 +42,7 @@
 
 <nav>
   <div class="dropdown">
-    <img src="../../static/favicon.png" alt="Spooky" />
+    <img src="/favicon.png" alt="Spooky" />
     <div class="dropdown-content left">
       <p on:click={() => goto('/')}>Home</p>
       <p on:click={() => goto('/guidelines')}>Guidelines</p>

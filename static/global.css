@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Explora&family=Scheherazade+New&family=Barlow+Condensed&display=swap');
+
+body {
+  --background: hsl(0, 0%, 7%);
+  --dp01: hsl(0, 0%, 12%);
+  --dp02: hsl(0, 0%, 17%);
+  --dp03: hsl(0, 0%, 22%);
+  --text: #fff;
+  --subtext: #888;
+  --subtextHover: #999;
+  --primary: #ec8609;
+  --secondary: #fa9e2d;
+  --tertiary: hsl(33, 93%, 44%);
+  --shadow: none;
+
+  --primaryFont: 'Barlow Condensed', sans-serif;
+  --fancyFont: 'Explora', sans-serif;
+}
+
+body.light-mode {
+  --background: hsl(0, 0%, 90%);
+  --dp01: hsl(0, 0%, 86%);
+  --dp02: hsl(0, 0%, 82%);
+  --dp03: hsl(0, 0%, 78%);
+  --text: #000;
+  --subtext: #555;
+  --subtextHover: #666;
+  --primary: hsl(33, 93%, 48%);
+  --secondary: hsl(33, 95%, 58%);
+  --tertiary: hsl(33, 93%, 44%);
+  --shadow: 0 0.3125rem 1.25rem 0 rgb(0 0 0 / 16%);
+}
+
+::-moz-selection {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+
+::selection {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--dp02);
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--dp03);
+}
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+}
+
+body,
+section {
+  overflow-x: hidden !important;
+}
+
+#svelte {
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--fancyFont);
+  font-size: clamp(2rem, 10vw, 4rem);
+
+  margin: 20px 0;
+  padding: 0;
+}
+*:not(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--primaryFont);
+}

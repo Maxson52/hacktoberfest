@@ -25,7 +25,13 @@
 
   onMount(() => {
     isDarkMode = JSON.parse(localStorage.getItem('isDarkMode'));
-    if (isDarkMode == false) [document.body.classList.add('light-mode')];
+
+    if (isDarkMode == null) {
+      localStorage.setItem('isDarkMode', true);
+      isDarkMode = true;
+    }
+
+    if (!isDarkMode) [document.body.classList.add('light-mode')];
   });
 
   function changeTheme() {

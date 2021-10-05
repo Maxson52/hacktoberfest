@@ -49,11 +49,9 @@
     }
   }
 
-  // Time ago
-  import TimeAgo from 'javascript-time-ago';
-  import en from 'javascript-time-ago/locale/en.json';
-  TimeAgo.addDefaultLocale(en);
-  const timeAgo = new TimeAgo('en-US');
+  // Moment
+  import moment from 'moment';
+  moment().format();
 </script>
 
 <section>
@@ -64,7 +62,7 @@
 
         <div class="close" on:click={() => goto('/')}>×</div>
       </div>
-      <p>{postValue.data[0].body}</p>
+      <p class="text">{postValue.data[0].body}</p>
 
       <hr />
 
@@ -76,7 +74,7 @@
             <div class="comment">
               <div class="spans">
                 <span class="subtext">
-                  {timeAgo.format(new Date(reply.created_at))}
+                  {moment(new Date(reply.created_at)).fromNow()}
                   {$user && $user.id == reply.authorid ? ' - You' : ''}
                 </span>
                 <span
@@ -90,7 +88,7 @@
                   Report
                 </span>
               </div>
-              <span>{reply.body}</span>
+              <span class="text">{reply.body}</span>
             </div>
           {/each}
         {/if}

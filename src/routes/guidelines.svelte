@@ -2,29 +2,21 @@
   <h1>Guidelines</h1>
 
   <p>
-    Be sure to follow these guidelines to prevent your replies from being
+    Be sure to follow these guidelines to prevent your stories from being
     blocked
   </p>
   <ul>
     <li>
-      Stay on topic, your reply should be an extension of the previous reply,
-      not a whole new story
+      Stay on topic, your reply should be an extension of the prompt, not a
+      whole new story
     </li>
     <li>
-      Limit corse language/violence/goriness. If you would read your reply to
+      Limit corse language/violence/goriness. If you would read your story to
       your grandma, it's likely fine
     </li>
     <li>
       Check for spelling and grammar errors. If you make a mistake, there's no
       going back
-    </li>
-    <li>
-      Don't write too much! Keep in mind that you want to leave room for other
-      people to continue the story after you
-    </li>
-    <li>
-      Don't end the story! Just when you planned on closing up shop, someone
-      else might have a killer twist, so no conclusions... ever!
     </li>
   </ul>
 </section>

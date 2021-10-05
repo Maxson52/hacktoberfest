@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
   import { goto } from '$app/navigation';
 
   import GetPosts from '$lib/utils/GetPosts';
@@ -6,23 +6,40 @@
   async function fetchPosts() {
     const res = await GetPosts({});
 
-    return res;
+    let sortedRes = res.data.slice().sort((a, b) => {
+      // Turn your strings into dates, and then subtract them to get a value that is either negative, positive, or zero.
+      return new Date(b.updated_at) - new Date(a.updated_at);
+    });
+
+    return sortedRes;
   }
 
   let promise = fetchPosts();
-</script>
 
-<svelte:head>
-  <title>Spooktober</title>
-</svelte:head>
+  function truncate(str, n) {
+    return str.length > n ? str.substr(0, n - 1) + '...' : str;
+  }
+
+  // Moment
+  import moment from 'moment';
+  moment().format();
+</script>
 
 <section>
   {#await promise then value}
-    {#each value.data as post}
+    {#each value as post}
       <div class="card" on:click={() => goto(`/post/${post.id}`)}>
+        <p
+          class="subtext"
+          style={`display: ${post.updated_at ? 'default' : 'none'};`}
+        >
+          {post.updated_at
+            ? 'Lastest story ' + moment(new Date(post.updated_at)).fromNow()
+            : ''}
+        </p>
         <h1>{post.title}</h1>
-        <p>{post.body}</p>
-        <p class="subtext">Continue reading...</p>
+        <p class="text">{truncate(post.body, 350)}</p>
+        <p class="subtext hover">Continue reading...</p>
       </div>
     {/each}
   {/await}
@@ -68,7 +85,7 @@
   .subtext {
     color: var(--subtext);
   }
-  .subtext:hover {
+  .hover:hover {
     text-decoration: underline;
   }
 </style>

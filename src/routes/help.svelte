@@ -1,18 +1,18 @@
 <section>
   <h1>Help</h1>
 
-  <p>Welcome to Spooktober!</p>
-  <p>The place to read and write scary stories.</p>
+  <p>Welcome to Spooked!</p>
+  <p>The place to read and write scary stories, leaving you Spooked!</p>
   <p>Here's how it works:</p>
   <ul>
-    <li>First, you find a writing prompt that you find interesting</li>
-    <li>You can read through all the ongoing stories by clicking on them</li>
+    <li>First, you find a prompt that you find interesting</li>
+    <li>You can read through all the stories by clicking on them</li>
     <li>
-      Once you've finished reading, you can contribute to the story by typing in
-      the reply box at the bottom of each page
+      Once you've finished reading, you can submit your version of the story by
+      typing in the reply box at the bottom of each page.
     </li>
     <li>
-      Submit as many replies as you'd like, just be sure to follow the <a
+      Submit as many endings as you'd like, just be sure to follow the <a
         href="/guidelines">guidelines</a
       >.
     </li>
@@ -21,8 +21,8 @@
   <p>Have you found a bug?</p>
   <p>Looking for a specific feature?</p>
   <p>
-    Shoot us an email at <a href="mailto:spooktober@max52.33mail.com"
-      >spooktober@max52.33mail.com</a
+    Shoot us an email at <a href="mailto:spooked@max52.33mail.com"
+      >spooked@max52.33mail.com</a
     >
   </p>
 </section>

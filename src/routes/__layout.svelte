@@ -59,7 +59,7 @@
     </div>
   </div>
 
-  <h1>Spooktober</h1>
+  <h1>Spooked!</h1>
 
   <div>
     {#if $user}

@@ -7,6 +7,7 @@
   import GetPosts from '$lib/utils/GetPosts';
   import GetReplies from '$lib/utils/GetReplies';
   import CreateReport from '$lib/utils/CreateReport';
+  import DeleteReply from '$lib/utils/DeleteReply';
 
   import CommentBox from '$lib/components/CommentBox.svelte';
 
@@ -49,6 +50,21 @@
     }
   }
 
+  // Delete reply
+  async function deleteReply(id) {
+    let response = confirm('Are you sure you want to delete this story?');
+
+    if (response) {
+      const { error } = await DeleteReply(id);
+
+      if (error) {
+        alert(error);
+      } else {
+        location.reload();
+      }
+    }
+  }
+
   // Moment
   import moment from 'moment';
   moment().format();
@@ -83,9 +99,16 @@
                     report(reply.postid, reply.authorid, $user.id)}
                   style={`display: ${
                     $user && $user.id != reply.authorid ? 'inline' : 'none'
+                  }`}>Report</span
+                >
+                <span
+                  class="subtext delete"
+                  on:click={() => deleteReply(reply.id)}
+                  style={`display: ${
+                    $user && $user.id == reply.authorid ? 'inline' : 'none'
                   }`}
                 >
-                  Report
+                  Delete
                 </span>
               </div>
               <span class="text">{reply.body}</span>
@@ -147,7 +170,8 @@
     justify-content: space-between;
   }
 
-  .report:hover {
+  .report:hover,
+  .delete:hover {
     text-decoration: underline;
     cursor: pointer;
   }

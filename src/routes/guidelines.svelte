@@ -3,20 +3,21 @@
 
   <p>
     Be sure to follow these guidelines to prevent your stories from being
-    blocked
+    blocked.
   </p>
   <ul>
     <li>
       Stay on topic, your reply should be an extension of the prompt, not a
-      whole new story
+      whole new story. For that, you can submit your own prompt on the home
+      page.
     </li>
     <li>
       Limit corse language/violence/goriness. If you would read your story to
-      your grandma, it's likely fine
+      your grandma, it's probably fine.
     </li>
     <li>
       Check for spelling and grammar errors. If you make a mistake, there's no
-      going back
+      going back.
     </li>
   </ul>
 </section>

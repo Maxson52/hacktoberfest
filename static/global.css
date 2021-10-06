@@ -18,10 +18,10 @@ body {
 }
 
 body.light-mode {
-  --background: hsl(0, 0%, 90%);
-  --dp01: hsl(0, 0%, 86%);
-  --dp02: hsl(0, 0%, 82%);
-  --dp03: hsl(0, 0%, 78%);
+  --background: hsl(0, 0%, 80%);
+  --dp01: hsl(0, 0%, 90%);
+  --dp02: hsl(0, 0%, 86%);
+  --dp03: hsl(0, 0%, 82%);
   --text: #000;
   --subtext: #555;
   --subtextHover: #666;
@@ -75,7 +75,7 @@ body {
 
   min-height: 100vh;
   width: 100vw;
-  padding: 0;
+  padding: 0 0 50px 0;
   margin: 0;
 }
 

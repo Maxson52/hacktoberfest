@@ -1,6 +1,8 @@
 <script>
   import { goto } from '$app/navigation';
 
+  import NewPrompt from '$lib/components/NewPrompt.svelte';
+
   import GetPosts from '$lib/utils/GetPosts';
 
   async function fetchPosts() {
@@ -27,6 +29,8 @@
 
 <section>
   {#await promise then value}
+    <NewPrompt />
+
     {#each value as post}
       <div class="card" on:click={() => goto(`/post/${post.id}`)}>
         <p

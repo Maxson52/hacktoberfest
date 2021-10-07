@@ -40,7 +40,7 @@
   }
 </script>
 
-<section>
+<section class={focused ? 'expand' : ''}>
   <input
     type="text"
     placeholder="Title"
@@ -70,18 +70,25 @@
 
     background-color: var(--dp01);
 
-    width: 100%;
-
-    border-radius: 10px;
+    overflow-y: hidden;
 
     margin: 10px 0;
     padding: 25px 40px;
 
     border: 1px solid var(--dp02);
-
     box-shadow: var(--shadow);
+    border-radius: 10px;
+
+    width: 100%;
+
+    max-height: 110px;
 
     transition: border 0.2s;
+    transition: max-height 0.5s ease;
+  }
+
+  section.expand {
+    max-height: 700px;
   }
 
   textarea,
@@ -98,8 +105,8 @@
     resize: vertical;
   }
 
-  input {
-    margin: 0 0 5px 0;
+  textarea {
+    margin: 5px 0 5px 0;
   }
 
   textarea:focus,

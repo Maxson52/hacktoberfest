@@ -9,8 +9,13 @@
 
 <style>
   button {
-    background-color: var(--primary);
-    color: var(--background);
+    /* background-color: var(--primary); */
+    background-image: linear-gradient(
+      to right,
+      var(--primary) 0%,
+      var(--secondary) 100%
+    );
+    color: var(--buttonText);
 
     padding: 0 15px;
 

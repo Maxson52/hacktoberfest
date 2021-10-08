@@ -81,4 +81,8 @@
       width: 90%;
     }
   }
+
+  label {
+    font-size: 1.3rem;
+  }
 </style>

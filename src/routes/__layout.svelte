@@ -8,6 +8,7 @@
 
 <script>
   import { goto } from '$app/navigation';
+  import { fade } from 'svelte/transition';
 
   import { user } from '$lib/stores/stores';
 
@@ -23,6 +24,9 @@
 
   let isDarkMode = true;
 
+  // Intro Modal
+  let open = false;
+
   onMount(() => {
     isDarkMode = JSON.parse(localStorage.getItem('isDarkMode'));
 
@@ -32,6 +36,11 @@
     }
 
     if (!isDarkMode) [document.body.classList.add('light-mode')];
+
+    // Have seen the welcome message
+    open = JSON.parse(localStorage.getItem('newUser'));
+
+    if (open == null) open = true;
   });
 
   function changeTheme() {
@@ -43,6 +52,11 @@
       isDarkMode = true;
     }
     localStorage.setItem('isDarkMode', isDarkMode);
+  }
+
+  function updateNewUser() {
+    open = false;
+    localStorage.setItem('newUser', false);
   }
 </script>
 
@@ -67,6 +81,7 @@
         href="/"
         on:click={() => {
           SignOut();
+          location.reload();
         }}>Sign Out</a
       >
     {:else}
@@ -77,6 +92,33 @@
     {/if}
   </div>
 </nav>
+
+{#if !$user && open}
+  <section class="new" transition:fade={{ duration: 250 }}>
+    <div class="container">
+      <span
+        class="close"
+        on:click={() => {
+          updateNewUser();
+        }}>×</span
+      >
+      <div class="content">
+        <h3>New Here?</h3>
+        <p>
+          The place to read and write scary stories. They'll leave you Spooked!
+        </p>
+        <p>
+          Check out the <a
+            href="/help"
+            on:click={() => {
+              updateNewUser();
+            }}>help</a
+          > page to learn what Spooked is about.
+        </p>
+      </div>
+    </div>
+  </section>
+{/if}
 
 <PageTransition refresh={key}>
   <slot />
@@ -100,24 +142,24 @@
     top: -1px;
   }
 
-  h1 {
+  nav h1 {
     font-size: 3rem;
     margin: 0;
   }
 
   @media only screen and (max-width: 600px) {
-    h1 {
+    nav h1 {
       display: none;
     }
   }
 
-  img {
+  nav img {
     height: 50px;
 
     cursor: pointer;
   }
 
-  a {
+  nav a {
     padding: 0 15px;
 
     font-size: 1.2em;
@@ -131,16 +173,16 @@
     transition: color 0.2s;
   }
 
-  a:hover {
+  nav a:hover {
     color: var(--primary);
   }
 
-  .dropdown {
+  nav .dropdown {
     position: relative;
     display: inline-block;
   }
 
-  .dropdown-content {
+  nav .dropdown-content {
     display: block;
     position: absolute;
     min-width: 160px;
@@ -160,17 +202,92 @@
     color: var(--text);
   }
 
-  .dropdown-content.left {
+  nav .dropdown-content.left {
     left: 0;
   }
 
-  .dropdown:hover .dropdown-content {
+  nav .dropdown:hover .dropdown-content {
     visibility: visible;
     opacity: 1;
   }
 
-  p:hover {
+  nav p:hover {
     text-decoration: underline;
     cursor: pointer;
+  }
+
+  /* Modal styles */
+  section.new {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.4);
+    /* backdrop-filter: blur(4px); */
+    width: 100vw;
+    height: 100vh;
+
+    z-index: 1000;
+  }
+
+  .new .container {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+
+    background-color: var(--dp01);
+
+    border-radius: 10px;
+
+    margin: 10px 0;
+    padding: 25px 40px;
+
+    border: 1px solid var(--dp02);
+
+    box-shadow: var(--shadow);
+
+    max-width: 98vw;
+    width: 50vw;
+
+    height: 500px;
+
+    font-size: 1.8rem;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .new .container {
+      width: 90vw;
+    }
+  }
+
+  .new h3 {
+    font-size: 4rem;
+  }
+
+  .new .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 80%;
+  }
+
+  .close {
+    color: var(--subtext);
+    font-size: 3rem;
+    cursor: pointer;
+    margin: 5px 0;
+  }
+
+  .close:hover {
+    color: var(--subtextHover);
+  }
+
+  .new a {
+    color: var(--primary);
+  }
+
+  .new a:hover {
+    color: var(--secondary);
   }
 </style>

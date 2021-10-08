@@ -111,7 +111,7 @@
                   Delete
                 </span>
               </div>
-              <span class="text">{reply.body}</span>
+              <p class="text">{reply.body.trim()}</p>
             </div>
           {/each}
         {/if}
@@ -155,6 +155,10 @@
     box-shadow: var(--shadow);
   }
 
+  .text {
+    margin: 0;
+  }
+
   .subtext {
     color: var(--subtext);
   }
@@ -162,7 +166,7 @@
   .comment {
     margin: 15px 0;
 
-    white-space: pre-wrap;
+    white-space: pre-line;
   }
 
   .spans {

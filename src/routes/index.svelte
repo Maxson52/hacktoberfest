@@ -37,9 +37,7 @@
           class="subtext"
           style={`display: ${post.updated_at ? 'default' : 'none'};`}
         >
-          {post.updated_at
-            ? 'Lastest story ' + moment(new Date(post.updated_at)).fromNow()
-            : ''}
+          {post.updated_at ? moment(new Date(post.updated_at)).fromNow() : ''}
         </p>
         <h1>{post.title}</h1>
         <p class="text">{truncate(post.body, 350)}</p>

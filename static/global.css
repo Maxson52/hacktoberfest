@@ -8,6 +8,7 @@ body {
   --text: #fff;
   --subtext: #888;
   --subtextHover: #999;
+  --buttonText: var(--background);
   --primary: #ec8609;
   --secondary: #fa9e2d;
   --tertiary: hsl(33, 93%, 44%);
@@ -25,6 +26,7 @@ body.light-mode {
   --text: #000;
   --subtext: #555;
   --subtextHover: #666;
+  --buttonText: hsl(0, 0%, 7%);
   --primary: hsl(33, 93%, 48%);
   --secondary: hsl(33, 95%, 58%);
   --tertiary: hsl(33, 93%, 44%);

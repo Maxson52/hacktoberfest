@@ -3,27 +3,28 @@
 
   <p>Welcome to Spooked!</p>
   <p>The place to read and write scary stories. They'll leave you Spooked!</p>
-  <p>The objective is simple. Write your own creative ending to the story.</p>
+  <p>
+    The objective is simple. Write your own creative ending based on the prompt.
+  </p>
   <p>Here's how it works:</p>
   <ul>
     <li>
       First, you find a prompt that you find interesting, some prompts are
-      short, some are long.
+      short, some are long. You can even create your own prompt!
     </li>
     <li>
-      Continue reading by clicking a story. You'll see the prompt and the
+      Continue reading the prompt by clicking it. You'll see the prompt and the
       stories others have come up with below.
     </li>
     <li>
-      Once you've finished reading, you can submit your version of the story by
-      typing in the reply box at the bottom of each page.
+      Once you've finished reading, you can submit your ending of the story by
+      typing in the reply box at the bottom of the page.
     </li>
     <li>
       Submit as many alternative endings as you'd like, just be sure to follow
       the <a href="/guidelines">guidelines</a>.
     </li>
   </ul>
-  <p>Would you like to submit your own prompt?</p>
   <p>Have you found a bug?</p>
   <p>Looking for a specific feature?</p>
   <p>

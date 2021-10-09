@@ -105,7 +105,7 @@
       <div class="content">
         <h3>New Here?</h3>
         <p>
-          The place to read and write scary stories. They'll leave you Spooked!
+          Welcome to Spooked! The place to read and write scary stories.
         </p>
         <p>
           Check out the <a

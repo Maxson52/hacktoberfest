@@ -2,6 +2,8 @@
 
 The database and authentication is done entirely with Supabase.
 
+📧 Email and password authentication is in place on Spooked!
+
 There are four tables:
 
 - public.users
